@@ -7,18 +7,18 @@ import Layout from "../components/layout"
 const IndexPage = ({ data }) => (
   <Layout>
     <Masonry className="showcase">
-      {data.allDatoCmsWork.edges.map(({ node: work }) => (
-        <div key={work.id} className="showcase__item">
+      {data.allDatoCmsEvent.edges.map(({ node: event }) => (
+        <div key={event.id} className="showcase__item">
           <figure className="card">
-            <Link to={`/works/${work.slug}`} className="card__image">
-              <Img fluid={work.coverImage.fluid} />
+            <Link to={`/events/${event.slug}`} className="card__image">
+              <Img fluid={event.coverImage.fluid} />
             </Link>
             <figcaption className="card__caption">
               <h6 className="card__title">
-                <Link to={`/works/${work.slug}`}>{work.title}</Link>
+                <Link to={`/events/${event.slug}`}>{event.title}</Link>
               </h6>
               <div className="card__description">
-                <p>{work.excerpt}</p>
+                <p>{event.excerpt}</p>
               </div>
             </figcaption>
           </figure>
@@ -32,7 +32,7 @@ export default IndexPage
 
 export const query = graphql`
   query IndexQuery {
-    allDatoCmsWork(sort: { fields: [position], order: ASC }) {
+    allDatoCmsEvent(sort: { fields: [position], order: ASC }) {
       edges {
         node {
           id
