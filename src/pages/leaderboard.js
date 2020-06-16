@@ -29,7 +29,7 @@ export default Leaderboard
 
 export const query = graphql`
   query LeaderboardQuery {
-    leaderboard: datoCmsLeaderboardPage {
+    leaderboard: datoCmsLeaderboard {
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
