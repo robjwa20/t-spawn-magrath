@@ -17,7 +17,7 @@ const Leaderboard = ({ data: { leaderboard } }) => (
         <div
           className="sheet__body"
           dangerouslySetInnerHTML={{
-            __html: leaderboard.bioNode.childMarkdownRemark.html,
+            __html: leaderboard.bioNode.childHtmlRemark.html,
           }}
         />
       </div>
